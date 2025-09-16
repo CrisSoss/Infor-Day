@@ -1,0 +1,712 @@
+/* ======================================== */
+/* 1. RESET E GLOBAIS              */
+/* ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    /* Gradiente estático rosa, roxo e azul */
+    background: linear-gradient(to right, #1f013d, #541d83, #e969f5);
+    color: #fff; /* Cor do texto padrão para o corpo */
+}
+
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* ======================================== */
+/* 2. HEADER E NAV               */
+/* ======================================== */
+
+/* --- Barra de Navegação --- */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black; /* Deixa o fundo preto */
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+    height: 22vh;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 29px;
+    margin-right: 110px; /* Adiciona margem à direita para centralizar */
+}
+
+/* --- Lista de Navegação (Desktop) --- */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.button-nav a {
+    background-color: #5d38ff;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.inscricao{
+    background-color: #5d38ff;
+    padding: 12px 22px; /* Aumentado para um tamanho mais visível */
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.1rem; /* Aumenta o tamanho do texto */
+    /* Margem de centralização removida */
+}
+
+#span1 {
+    background-color: transparent; /* Fundo transparente */
+    border: 2px solid #5d38ff; /* Borda com a cor principal */
+    padding: 10px 20px; /* Ajuste no padding para alinhar com a borda */
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.1rem; /* Aumenta o tamanho do texto */
+    /* Margem de centralização removida */
+}
+
+/* Novo container para os botões */
+.action-buttons-container {
+    display: flex;
+    justify-content: center; /* Centraliza o grupo de botões */
+    align-items: center;
+    gap: 20px; /* Espaço entre os botões */
+    margin-top: 35px; /* Margem acima do grupo de botões */
+}
+
+/* --- Ícone do Menu Móvel (Hamburguer) --- */
+.mobile-menu {
+    cursor: pointer;
+    display: none;
+    position: relative;
+    z-index: 1000;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s ease;
+}
+
+/* --- Título Principal e Descrição --- */
+.main-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+#titulo-principal {
+    font-family: Arial,;
+    font-size: 10rem;
+    font-weight: 700;
+    /* Gradiente de texto azul-roxo */
+    background: linear-gradient(45deg, #6a62b4, #e969f5, #7557f8, #c77474);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    
+}
+
+#titulodois, i{
+    font-family: Arial,;
+    font-size: 50px;
+    font-weight: 700;
+    /* Gradiente de texto azul-roxo */
+    background: linear-gradient(45deg, #6a62b4, #e969f5, #7557f8, #c77474);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    margin-left: 10px; /* Adiciona um espaço à esquerda */
+}
+
+.sobre{
+    margin-bottom: 0; /* Reduz a margem inferior para aproximar o texto abaixo */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.sobre-texto{
+    font-size: 1.2rem;
+    max-width: 800px;
+    line-height: 1.5;
+    padding: 0 20px;
+    color: #cccccc;
+    margin-top: 0; /* Remove a margem superior para aproximar do título */
+    padding:px;
+    align-items: center;    
+    margin-top: 0; /* Remove a margem superior */
+    margin-left: auto; /* Adicionado para centralizar */
+    margin-right: auto; /* Adicionado para centralizar */
+}
+#vintecinco {
+    font-family: 'Poppins', sans-serif;
+    font-size: 140px;
+    font-weight: 700;
+    /* Gradiente de texto branco-cinza */
+    background: linear-gradient(45deg, #ffffff, #d8d8d8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    margin-top: -20px;
+}
+
+.description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    line-height: 1.5;
+    padding: 0 20px;
+    margin-top: 20px;
+    color: #cccccc;
+}
+
+/* --- Info Box (Glassmorphism) --- */
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    z-index: 1;
+}
+
+.palestrante-card{
+    position: relative;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.palestrante-card:hover{
+    transform: translateY(-5px);
+}
+
+.palestrante-image-container{
+     position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: linear-gradient(45deg, #1a0f2b, #3a1270);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 220px;
+    height: 120px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    transition: transform 0.2s ease-in-out;
+}
+
+.palestrante-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+.palestrante-card:hover .palestrante-image-container img {
+    filter: brightness(1);
+}
+
+.company-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    backdrop-filter: blur(5px);
+}
+
+.palestrante-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.palestrante-content h4 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #a337eb, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.palestrante-content .role {
+    font-size: 1em;
+    color: #a78bfa;
+    margin-bottom: 10px;
+}
+
+.palestrante-content .description {
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background-color: rgba(167, 139, 250, 0.2);
+    color: #a78bfa;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    font-size: 1.5em;
+    color: #cccccc;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #a78bfa;
+}
+
+/* ======================================== */
+/* 9. MEDIA QUERIES (PARA RESPONSIVIDADE)   */
+/* ======================================== */
+
+@media (max-width: 768px) {
+    .palestrante-card {
+        width: 100%; /* Ocupa a largura total em telas menores */
+    }
+}
+
+.info-box2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 220px;
+    height: 120px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    transition: transform 0.2s ease-in-out;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.info-box i {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    /* Gradiente para os ícones */
+    background: linear-gradient(45deg, #a337eb, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.main-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.sub-text {
+    font-size: 0.9em;
+    color: #cccccc;
+    margin: 5px 0 0;
+}
+
+.palestrante {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    color: #b7b2bb; /* Cor roxa para destacar */
+}
+
+/* ======================================== */
+/* 3. RESPONSIVIDADE (MEDIA QUERIES)  */
+/* ======================================== */
+
+@media (max-width: 999px) {
+    .nav-list {
+        position: absolute;
+        top: 12vh;
+        right: 0;
+        width: 37vw;
+        height: 92vh;
+        flex-direction: column;
+        background-color: black;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        z-index: 1001; /* Garante que a nav-list fique acima do info-container (z-index: 999) */
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+        z-index: 1005; /* Valor ajustado */
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-list.active {
+        transform: translateX(0);
+    }
+
+    /* Adicionado para estilizar os links do menu móvel corretamente */
+    .nav-list.active a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .mobile-menu.active .line1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+
+    .mobile-menu.active .line2 {
+        opacity: 0;
+    }
+
+    .mobile-menu.active .line3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+
+    #titulo-principal {
+        font-size: 6rem; /* Aumentado para telas menores */
+    }
+
+    #vintecinco {
+        font-size: 80px; /* Ajustado para telas menores */
+        margin-top: -10px;
+    }
+}
+
+/* ======================================== */
+/* 4. ANIMAÇÕES E KEYFRAMES          */
+/* ======================================== */
+
+@keyframes gradient-background {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.info-cards-container {
+    display: flex;
+    flex-direction: column; /* Adicionado para empilhar os itens */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaço entre os cards */
+    gap: 5px; /* Reduzido o espaço entre os itens */
+    margin-top: 20px;
+    z-index: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Adicionado para agrupar o ícone e o h3 */
+.info-cards-container > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#event-days {
+    font-size: 1rem;
+    color: #cccccc;
+    justify-content: colum;
+}
+
+
+/* ======================================== */
+/* 5. CONTAGEM REGRESSIVA            */
+/* ======================================== */
+
+/* Estilos para o container da contagem */
+#countdown-container {
+    color: #fff; /* Cor do texto, ajuste se necessário */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para a contagem em si (organiza os blocos) */
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os blocos de tempo */
+    font-family: 'Helvetica Now', sans-serif;
+}
+
+/* Estilo para cada bloco (dias, horas, etc) */
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
+    padding: 10px 20px;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+/* Estilo para os números grandes */
+.time-block span:first-child {
+    font-size: 3rem; /* Tamanho dos números */
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Estilo para os rótulos (Dias, Horas, etc) */
+.time-block span:last-child {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* ======================================== */
+/* 6. SEÇÃO DE PATROCÍNIO E APOIO      */
+/* ======================================== */
+
+#sponsors {
+    padding: 80px 20px; /* Espaçamento interno da seção */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo levemente mais claro para destacar */
+}
+
+/* Título principal da seção */
+#sponsors h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Subtítulos (Patrocínio, Apoio) */
+#sponsors h3 {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Grid que segura os logos */
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os logos quebrem a linha em telas menores */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espaço entre os logos */
+}
+
+/* Estilo para cada logo */
+.logo-grid img {
+    max-height: 100px; /* Altura máxima para os logos, a largura se ajusta */
+    opacity: 0.7;
+    filter: grayscale(100%); /* Deixa os logos em escala de cinza */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o logo */
+.logo-grid a:hover img {
+    opacity: 1;
+    filter: grayscale(0%); /* Remove a escala de cinza e revela a cor */
+    transform: scale(1.1); /* Aumenta levemente o tamanho */
+}
+
+/* ======================================== */
+/* 7. RODAPÉ (FOOTER)         */
+/* ======================================== */
+
+.site-footer {
+    background-color: #1a0f2b; /* Cor de fundo roxo bem escuro, similar à imagem */
+    color: rgba(255, 255, 255, 0.7); /* Cor padrão do texto */
+    padding: 60px 0 20px 0;
+    margin-top: 50px; /* Espaço para separar da seção de patrocínio */
+    border-top: 1px solid #3a1270; /* Linha sutil no topo */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que as colunas se ajustem em telas menores */
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1; /* Permite que as colunas cresçam igualmente */
+    min-width: 250px; /* Largura mínima para cada coluna antes de quebrar a linha */
+}
+
+.footer-column h4 {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-column p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Estiliza os ícones */
+.footer-column p i {
+    color: #a78bfa; /* Um tom de roxo mais claro para os ícones */
+    margin-right: 10px;
+    width: 20px; /* Alinha o texto mesmo com ícones diferentes */
+    text-align: center;
+}
+
+/* Estilo para a lista de links */
+.footer-column.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column.links li {
+    margin-bottom: 10px;
+}
+
+.footer-column.links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column.links a:hover {
+    color: #fff;
+}
+
+/* --- Barra Inferior do Rodapé --- */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 20px 20px 0 20px;
+    border-top: 1px solid #3a2d4d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-legal a {
+    margin-left: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    color: #fff;
+}
+
+
+/* --- Responsividade para o Rodapé --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Coloca as colunas uma embaixo da outra */
+        align-items: center;
+        text-align: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
