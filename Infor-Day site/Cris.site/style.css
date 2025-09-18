@@ -1,5 +1,5 @@
 /* ======================================== */
-/* 1. RESET E GLOBAIS              */
+/* 1. RESET E GLOBAIS                       */
 /* ======================================== */
 * {
     margin: 0;
@@ -8,13 +8,12 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     /* Gradiente estático rosa, roxo e azul */
     background: linear-gradient(to right, #1f013d, #541d83, #e969f5);
     color: #fff; /* Cor do texto padrão para o corpo */
 }
-
 
 a {
     color: #fff;
@@ -27,7 +26,7 @@ a:hover {
 }
 
 /* ======================================== */
-/* 2. HEADER E NAV               */
+/* 2. HEADER E NAV                          */
 /* ======================================== */
 
 /* --- Barra de Navegação --- */
@@ -78,7 +77,6 @@ nav {
     text-align: center;
     display: inline-block;
     font-size: 1.1rem; /* Aumenta o tamanho do texto */
-    /* Margem de centralização removida */
 }
 
 #span1 {
@@ -89,7 +87,6 @@ nav {
     text-align: center;
     display: inline-block;
     font-size: 1.1rem; /* Aumenta o tamanho do texto */
-    /* Margem de centralização removida */
 }
 
 /* Novo container para os botões */
@@ -128,7 +125,7 @@ nav {
 }
 
 #titulo-principal {
-    font-family: Arial,;
+    font-family: 'Poppins', sans-serif;
     font-size: 10rem;
     font-weight: 700;
     /* Gradiente de texto azul-roxo */
@@ -138,11 +135,10 @@ nav {
     background-clip: text;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     white-space: nowrap;
-    
 }
 
-#titulodois, i{
-    font-family: Arial,;
+#titulodois, i {
+    font-family: 'Poppins', sans-serif;
     font-size: 50px;
     font-weight: 700;
     /* Gradiente de texto azul-roxo */
@@ -155,25 +151,26 @@ nav {
     margin-left: 10px; /* Adiciona um espaço à esquerda */
 }
 
-.sobre{
-    margin-bottom: 0; /* Reduz a margem inferior para aproximar o texto abaixo */
+.sobre {
+    margin-bottom: 0;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-.sobre-texto{
+.sobre-texto {
     font-size: 1.2rem;
     max-width: 800px;
     line-height: 1.5;
     padding: 0 20px;
     color: #cccccc;
-    margin-top: 0; /* Remove a margem superior para aproximar do título */
-    padding:px;
-    align-items: center;    
-    margin-top: 0; /* Remove a margem superior */
-    margin-left: auto; /* Adicionado para centralizar */
-    margin-right: auto; /* Adicionado para centralizar */
+    margin-top: 0;
+    padding: px;
+    align-items: center;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 #vintecinco {
     font-family: 'Poppins', sans-serif;
     font-size: 140px;
@@ -204,9 +201,10 @@ nav {
     gap: 20px;
     padding: 40px 20px;
     z-index: 1;
+    align-items: stretch; /* Garante que todas as caixas tenham a mesma altura */
 }
 
-.palestrante-card{
+.palestrante-card {
     position: relative;
     width: 300px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -214,17 +212,19 @@ nav {
     border-radius: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: #fff;
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
 }
 
-.palestrante-card:hover{
+.palestrante-card:hover {
     transform: translateY(-5px);
 }
 
-.palestrante-image-container{
-     position: relative;
+.palestrante-image-container {
+    position: relative;
     width: 100%;
     height: 180px;
     overflow: hidden;
@@ -233,16 +233,31 @@ nav {
     border-top-right-radius: 15px;
 }
 
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* Define uma altura para o container do ícone */
+    margin-bottom: 10px; 
+}
 
+.info-box i, .info-box2 i {
+    font-size: 2.5em;
+    margin-bottom: 15px; /* Adiciona espaço abaixo do ícone */
+    background: linear-gradient(45deg, #a337eb, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
 .info-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; /* Alinha o conteúdo no topo */
+    align-items: center; /* Centraliza horizontalmente */
     text-align: center;
     width: 220px;
-    height: 120px;
+    min-height: 120px; /* Garante altura mínima, mas permite crescer */
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -280,7 +295,10 @@ nav {
 
 .palestrante-content {
     padding: 20px;
-    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .palestrante-content h4 {
@@ -296,7 +314,7 @@ nav {
 .palestrante-content .role {
     font-size: 1em;
     color: #a78bfa;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .palestrante-content .description {
@@ -311,6 +329,8 @@ nav {
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 15px;
+    min-height: 40px;
+    justify-content: center; /* Centraliza as tags */
 }
 
 .tag {
@@ -324,18 +344,32 @@ nav {
 
 .social-links {
     display: flex;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 20px;
+    margin-top: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
 .social-links a {
-    font-size: 1.5em;
-    color: #cccccc;
+    font-size: 1.7em;
+    color: #fff;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #a78bfa;
+    color: #e6e4ec;
+}
+
+/* Adicionado para garantir que os ícones das redes sociais sejam brancos */
+.social-links a i {
+    background: none; /* Remove o gradiente */
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: currentColor; /* Usa a cor do link pai (<a>) */
+    background-clip: unset;
+    font-size: inherit; /* Herda o tamanho do link pai */
 }
 
 /* ======================================== */
@@ -348,14 +382,13 @@ nav {
     }
 }
 
-.info-box2{
+.info-box2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Altera o alinhamento para o topo */
     align-items: center;
     text-align: center;
     width: 220px;
-    height: 120px;
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -370,26 +403,28 @@ nav {
     transform: translateY(-5px);
 }
 
+/* Estilo para os ícones dentro da info-box */
 .info-box i {
     font-size: 2.5em;
-    margin-bottom: 5px;
-    /* Gradiente para os ícones */
     background: linear-gradient(45deg, #a337eb, #fff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
+/* Estilo para o texto principal */
 .main-text {
     font-size: 1.2em;
     font-weight: bold;
     margin: 0;
+    line-height: 1.2;
 }
 
+/* Estilo para o texto secundário */
 .sub-text {
     font-size: 0.9em;
     color: #cccccc;
     margin: 5px 0 0;
+    line-height: 1.2;
 }
 
 .palestrante {
@@ -400,7 +435,7 @@ nav {
 }
 
 /* ======================================== */
-/* 3. RESPONSIVIDADE (MEDIA QUERIES)  */
+/* 3. RESPONSIVIDADE (MEDIA QUERIES)        */
 /* ======================================== */
 
 @media (max-width: 999px) {
@@ -440,7 +475,7 @@ nav {
         color: white;
         text-decoration: none;
     }
-    
+
     .mobile-menu.active .line1 {
         transform: rotate(-45deg) translate(-8px, 8px);
     }
@@ -464,7 +499,7 @@ nav {
 }
 
 /* ======================================== */
-/* 4. ANIMAÇÕES E KEYFRAMES          */
+/* 4. ANIMAÇÕES E KEYFRAMES                 */
 /* ======================================== */
 
 @keyframes gradient-background {
@@ -493,7 +528,7 @@ nav {
     gap: 5px; /* Reduzido o espaço entre os itens */
     margin-top: 20px;
     z-index: 1;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Adicionado para agrupar o ícone e o h3 */
@@ -509,9 +544,8 @@ nav {
     justify-content: colum;
 }
 
-
 /* ======================================== */
-/* 5. CONTAGEM REGRESSIVA            */
+/* 5. CONTAGEM REGRESSIVA                   */
 /* ======================================== */
 
 /* Estilos para o container da contagem */
@@ -527,7 +561,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 20px; /* Espaço entre os blocos de tempo */
-    font-family: 'Helvetica Now', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Estilo para cada bloco (dias, horas, etc) */
@@ -555,7 +589,7 @@ nav {
 }
 
 /* ======================================== */
-/* 6. SEÇÃO DE PATROCÍNIO E APOIO      */
+/* 6. SEÇÃO DE PATROCÍNIO E APOIO           */
 /* ======================================== */
 
 #sponsors {
@@ -572,6 +606,7 @@ nav {
     margin-bottom: 60px;
     color: #fff;
     text-transform: uppercase;
+    text-align: center;
 }
 
 /* Subtítulos (Patrocínio, Apoio) */
@@ -608,7 +643,7 @@ nav {
 }
 
 /* ======================================== */
-/* 7. RODAPÉ (FOOTER)         */
+/* 7. RODAPÉ (FOOTER)                       */
 /* ======================================== */
 
 .site-footer {
@@ -696,7 +731,6 @@ nav {
 .footer-legal a:hover {
     color: #fff;
 }
-
 
 /* --- Responsividade para o Rodapé --- */
 @media (max-width: 768px) {
